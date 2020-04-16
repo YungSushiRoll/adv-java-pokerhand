@@ -58,6 +58,7 @@ public class Poker {
         boolean isFourOfAKind = false;
         boolean isFlush = false;
         boolean isTwoPair = false;
+        boolean isAPair = false;
 
         if ((handList.get(0).getNumber() == 10
                 && handList.get(1).getNumber() == 11
@@ -107,6 +108,16 @@ public class Poker {
             if (isTwoPair)
             {
                 System.out.println("Look at those pairs!");
+            }
+        } else if (handList.get(0).getNumber() == handList.get(1).getNumber()
+                || handList.get(1).getNumber() == handList.get(2).getNumber()
+                || handList.get(2).getNumber() == handList.get(3).getNumber()
+                || handList.get(3).getNumber() == handList.get(4).getNumber())
+        {
+            isAPair = true;
+            if (isAPair)
+            {
+                System.out.println("Look! A Pair!");
             }
         } else {
             if (handList.get(4).getNumber() < 11) {
